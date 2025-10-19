@@ -10,23 +10,30 @@ Write a C program to read 3 characters one by one and print the characters in a 
 4.	End the program.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+
+int main() {
+    char a, b, c;
+    printf("Enter first character: ");
+    scanf(" %c", &a);
+    printf("Enter second character: ");
+    scanf(" %c", &b);
+    printf("Enter third character: ");
+    scanf(" %c", &c);
+    printf("Characters in reverse order: %c %c %c\n", c, b, a);
+    return 0;
+}
+```
 
 ## OUTPUT:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+Enter first character: A
+Enter second character: B
+Enter third character: C
+Characters in reverse order: C B A
+```
 
 
 ## RESULT:
@@ -46,18 +53,32 @@ Write a C program to read A values and check whether A is positive number or not
 6.End the program.
 
 # PROGRAM:
+```
+#include <stdio.h>
+
+int main() {
+    int A;
+    printf("Enter a number: ");
+    scanf("%d", &A);
+    if (A > 0)
+        printf("A is a positive number.\n");
+    else
+        printf("A is not a positive number.\n");
+    return 0;
+}
+
+```
 
 # OUTPUT:
 
+```
+Enter a number: 15
+A is a positive number.
 
+Enter a number: -7
+A is not a positive number.
 
-
-
-
-
-
-
-
+```
 
 # RESULT:
 Thus the program to read A values and check whether A is positive number or not has been executed successfully.
@@ -80,17 +101,33 @@ Write a program to find minimum between two fraction numbers using conditional o
 7.	Print the minimum value.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+
+int main() {
+    int num1, den1, num2, den2;
+    float frac1, frac2, min;
+    printf("Enter numerator and denominator for first fraction: ");
+    scanf("%d %d", &num1, &den1);
+    printf("Enter numerator and denominator for second fraction: ");
+    scanf("%d %d", &num2, &den2);
+    frac1 = (float)num1/den1;
+    frac2 = (float)num2/den2;
+    min = (frac1 < frac2) ? frac1 : frac2;
+    printf("Minimum value: %f\n", min);
+    return 0;
+}
+
+```
 
 ## OUTPUT:
 
+```
+Enter numerator and denominator for first fraction: 1 2
+Enter numerator and denominator for second fraction: 3 4
+Minimum value: 0.500000
 
-
-
-
-
-
-
-
+```
 ## RESULT:
 Thus the program to find minimum between two fraction numbers using conditional operator or ternary operator has been executed successfully.
 
@@ -111,9 +148,30 @@ Write a C program to check whether the input value is equal to 1 using simple if
 6.	End the program.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+    int value;
+    printf("Enter a value: ");
+    scanf("%d", &value);
+    if (value == 1)
+        printf("Input value is equal to 1.\n");
+    else
+        printf("Input value is not equal to 1.\n");
+    return 0;
+}
+
+```
 ## OUTPUT:
+```
+Enter a value: 1
+Input value is equal to 1.
 
+Enter a value: 4
+Input value is not equal to 1.
+
+```
 
 
 
@@ -147,9 +205,52 @@ c.	Else if percentage >= 36: Print “Division = Pass”
 9.	Else: Print “Division = Fail”
 10.	End
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+    int m1, m2, m3;
+    float tot, per;
+    printf("Enter marks for three subjects: ");
+    scanf("%d %d %d", &m1, &m2, &m3);
+    tot = m1 + m2 + m3;
+    per = tot / 3;
+    printf("Total = %.2f\n", tot);
+    printf("Percentage = %.2f\n", per);
+    if (m1 >= 40 && m2 >= 40 && m3 >= 40) {
+        if (per >= 60)
+            printf("Division = First\n");
+        else if (per >= 48)
+            printf("Division = Second\n");
+        else if (per >= 36)
+            printf("Division = Pass\n");
+        else
+            printf("Division = Fail\n");
+    } else {
+        printf("Division = Fail\n");
+    }
+    return 0;
+}
+
+```
 ## OUTPUT:
+```
+Enter marks for three subjects: 70 65 80
+Total = 215.00
+Percentage = 71.67
+Division = First
 
+Enter marks for three subjects: 45 41 44
+Total = 130.00
+Percentage = 43.33
+Division = Pass
+
+Enter marks for three subjects: 35 50 38
+Total = 123.00
+Percentage = 41.00
+Division = Fail
+
+```
 ## RESULT:
 The program successfully takes three subject marks, calculates the total and percentage, and correctly determines the division based on predefined grading logic.
 
